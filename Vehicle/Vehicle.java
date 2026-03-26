@@ -1,5 +1,3 @@
-package model;
-
 public abstract class Vehicle {
     private int id;
     private String name;
@@ -31,7 +29,7 @@ public abstract class Vehicle {
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
     public String getNumberPlate() { return numberPlate; }
-    public void setNumberPlate(String numberPlate) { this.numberPlate = numberPlate; }
+    public void setNumberPlate(String plate) { this.numberPlate = plate; }
     public int getAvailableCount() { return availableCount; }
     public void setAvailableCount(int count) { this.availableCount = count; }
     public double getRentalPricePerDay() { return rentalPricePerDay; }

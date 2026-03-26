@@ -1,7 +1,3 @@
-package service;
-
-import model.*;
-import util.DataStore;
 import java.util.*;
 
 public class VehicleService {
@@ -80,7 +76,7 @@ public class VehicleService {
         System.out.print("Borrower Email: ");
         String email = sc.nextLine().trim();
         ds.findUser(email).ifPresentOrElse(u -> {
-            if (u.getRole() != model.User.Role.BORROWER) { System.out.println("Not a borrower."); return; }
+            if (u.getRole() != User.Role.BORROWER) { System.out.println("Not a borrower."); return; }
             System.out.print("New Security Deposit Amount: ");
             double amt = Double.parseDouble(sc.nextLine().trim());
             u.setSecurityDeposit(amt);

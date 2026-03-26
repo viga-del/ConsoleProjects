@@ -1,5 +1,3 @@
-import model.User;
-import service.*;
 import java.util.Scanner;
 
 public class Main {

@@ -1,8 +1,3 @@
-package service;
-
-import model.User;
-import model.User.Role;
-import util.DataStore;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -29,16 +24,13 @@ public class AuthService {
         String name = sc.nextLine().trim();
         System.out.print("Email: ");
         String email = sc.nextLine().trim();
-        if (ds.findUser(email).isPresent()) {
-            System.out.println("Email already registered.");
-            return null;
-        }
+        if (ds.findUser(email).isPresent()) { System.out.println("Email already registered."); return null; }
         System.out.print("Password: ");
         String password = sc.nextLine().trim();
         System.out.print("Role (ADMIN/BORROWER): ");
         String roleStr = sc.nextLine().trim().toUpperCase();
-        Role role;
-        try { role = Role.valueOf(roleStr); } catch (Exception e) { System.out.println("Invalid role."); return null; }
+        User.Role role;
+        try { role = User.Role.valueOf(roleStr); } catch (Exception e) { System.out.println("Invalid role."); return null; }
 
         User user = new User(email, password, name, role);
         ds.users.add(user);

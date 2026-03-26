@@ -1,8 +1,3 @@
-package service;
-
-import model.*;
-import model.Rental.RentalStatus;
-import util.DataStore;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -43,7 +38,7 @@ public class ReportService {
 
         System.out.println("=== Currently Rented Vehicles ===");
         ds.rentals.stream()
-                .filter(r -> r.getStatus() == RentalStatus.ACTIVE || r.getStatus() == RentalStatus.EXTENDED)
+                .filter(r -> r.getStatus() == Rental.RentalStatus.ACTIVE || r.getStatus() == Rental.RentalStatus.EXTENDED)
                 .forEach(r -> System.out.println(r.getVehicle().getName() + " | Rented by: " + r.getBorrowerEmail()));
 
         System.out.println("\n=== Never Rented Vehicles ===");

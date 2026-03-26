@@ -1,7 +1,3 @@
-package util;
-
-import model.*;
-import model.User.Role;
 import java.util.*;
 
 public class DataStore {
@@ -24,16 +20,15 @@ public class DataStore {
     public int nextRentalId() { return rentalIdCounter++; }
 
     private void seed() {
-        users.add(new User("admin@rental.com", "admin123", "Admin", Role.ADMIN));
-        users.add(new User("alice@mail.com", "pass123", "Alice", Role.BORROWER));
-        users.add(new User("bob@mail.com", "pass456", "Bob", Role.BORROWER));
+        users.add(new User("admin@rental.com", "admin123", "Admin", User.Role.ADMIN));
+        users.add(new User("alice@mail.com", "pass123", "Alice", User.Role.BORROWER));
+        users.add(new User("bob@mail.com", "pass456", "Bob", User.Role.BORROWER));
 
         Car c1 = new Car(nextVehicleId(), "Toyota Camry", "TN01AB1234", 3, 1500.0);
         Car c2 = new Car(nextVehicleId(), "Honda City", "TN02CD5678", 2, 1200.0);
         Bike b1 = new Bike(nextVehicleId(), "Royal Enfield", "TN03EF9012", 4, 500.0);
         Bike b2 = new Bike(nextVehicleId(), "Honda Activa", "TN04GH3456", 5, 300.0);
 
-        // Simulate some kms for service-due demo
         c1.addKms(2800);
         b1.addKms(1400);
 

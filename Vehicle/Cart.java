@@ -1,5 +1,3 @@
-package model;
-
 public class Cart {
     private Vehicle car;
     private Vehicle bike;

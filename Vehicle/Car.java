@@ -1,5 +1,3 @@
-package model;
-
 public class Car extends Vehicle {
     public Car(int id, String name, String numberPlate, int availableCount, double rentalPricePerDay) {
         super(id, name, numberPlate, availableCount, rentalPricePerDay, 3000);
